@@ -11,11 +11,16 @@ class Database:
     self.password = password
     self.database = database
     
+  def getDb(self):
+    return self.db
+
   def connect(self):
     self.db = pymysql.connect(self.host, self.user, self.password, self.database)
   
   def close(self):
     self.db.close()
+
+  
 
 
 
