@@ -1,4 +1,6 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
+from Controller.pokemon import Pokemon
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -7,5 +9,7 @@ def index():
 
 
 app.run()
+
+
 
 
