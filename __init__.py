@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, url_for
-from Controller.pokemon import Pokemon
+from Controller import Pokemon
 
 app = Flask(__name__)
 

@@ -1,11 +1,18 @@
-from Database.database import Database
+import mysql.connector
+import pandas as pd
 
 
-class Pokemon:
+def select():
+  print('selected')
 
-  def select():
-    print('selected')
-      
+
+def insert():
+
+
+    
+
+
+ 
 
 
     
