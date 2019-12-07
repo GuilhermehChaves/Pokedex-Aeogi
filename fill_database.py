@@ -4,4 +4,3 @@ fill_pokemon.insert()
 fill_type.insert()
 fill_poke_type.insert()
 fill_abilities.insert()
-

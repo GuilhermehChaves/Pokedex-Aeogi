@@ -1,4 +1,12 @@
-import pandas as pd
+from modules import db
 
-def select():
-  print('selected')
+def selectAll():
+  cursor = db.cursor
+  sql = "SELECT * FROM pokemon"
+  cursor.execute(sql)
+  pokemons = cursor.fetchall()
+  db.CONNECTION.commit()
+  
+  return pokemons
+
+  

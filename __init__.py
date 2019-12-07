@@ -5,10 +5,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+
+  pokemons = Pokemon.selectAll()
   return render_template('index.html', title='Pokedex', 
                                        img=['https://assets.pokemon.com/assets/cms2/img/pokedex/full/00',
                                             'https://assets.pokemon.com/assets/cms2/img/pokedex/full/0',
-                                            'https://assets.pokemon.com/assets/cms2/img/pokedex/full/']
+                                            'https://assets.pokemon.com/assets/cms2/img/pokedex/full/'],
+                                      pokemons = pokemons
                         )
 
 
