@@ -5,10 +5,29 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
 
 
-{% for i in range(30) %}
+{% for i in range(800) %}
 
 <div class="card">
-  <div class="image"></div>
+    <div class="image">
+
+      {% set id = i+1 %}
+
+        {% if id < 10 %}
+          <img class="img_content" src="{{ img[0] + id|string + '.png'}}">
+        {% endif %}
+
+        {% if id > 9 and id <= 99 %}
+          <img class="img_content" src="{{ img[1] + id|string + '.png'}}">
+        {% endif %}
+
+        {% if id > 99 %}
+          <img class="img_content" src="{{ img[2] + id|string + '.png'}}">
+        {% endif %}
+
+        
+
+
+    </div>
   <div class="classfication"> </div>
 </div>
 
