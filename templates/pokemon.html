@@ -2,6 +2,63 @@
 
 
 {% block content %}
-  <title>  </title>
-  {{ pokemon['name']  }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='pokemon.css') }}">
+  <title> {{ title }} </title>
+
+  {% set id = pokemon['pokedex_number'] %}
+
+  <div id="pokemon_content">
+
+    {% if id < 10 %}
+      <img id="pokemon_image" src="{{ img[0] + id|string + '.png'}}">
+    {% endif %}
+
+    {% if id > 9 and id <= 99 %}
+      <img id="pokemon_image" src="{{ img[1] + id|string + '.png'}}">
+    {% endif %}
+
+    {% if id > 99 %}
+      <img  id="pokemon_image" src="{{ img[2] + id|string + '.png'}}">
+    {% endif %}
+
+    <center>
+      <h6> {{ pokemon['name'] }} </h6>
+    </center>
+  </div>
+
+
+  <div id="skills_content">
+      <canvas id="skills"> </canvas>
+  </div>
+  
+
+
+
+  <script type="text/javascript">
+      var ctx = document.getElementById('skills').getContext('2d');
+      var chart = new Chart(ctx, {
+      // The type of chart we want to create
+      type: 'radar',
+
+      // The data for our dataset
+      data: {
+          labels: ['attack', 'defense', 'speed', 'hp'],
+          datasets: [{
+              label: "{{ pokemon['name'] }}",
+              backgroundColor: 'rgba(0,204,255,0.2)',
+              borderColor: '#00CCFF',
+              data: ["{{ pokemon['attack'] }}", "{{ pokemon['defense'] }}", "{{ pokemon['speed'] }}", "{{ pokemon['hp'] }}"]
+          }]
+      },
+
+      responsive: true,
+      maintainAspectRatio: false,
+
+      options: {}
+    });
+  </script>
+
+
+
+
 {% endblock %}
