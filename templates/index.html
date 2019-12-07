@@ -36,32 +36,32 @@
 
 {% for i in range(150) %}
 
-<div class="card">
-    <div class="image">
+<a class="pokemon_link" href="{{ 'http://localhost:5000/pokemon/' + pokemons[i]['name']  }}">
+  <div class="card">
+      <div class="image">
 
-      {% set id = i+1 %}
+        {% set id = i+1 %}
 
-        {% if id < 10 %}
-          <img class="img_content" src="{{ img[0] + id|string + '.png'}}">
-        {% endif %}
+          {% if id < 10 %}
+            <img class="img_content" src="{{ img[0] + id|string + '.png'}}">
+          {% endif %}
 
-        {% if id > 9 and id <= 99 %}
-          <img class="img_content" src="{{ img[1] + id|string + '.png'}}">
-        {% endif %}
+          {% if id > 9 and id <= 99 %}
+            <img class="img_content" src="{{ img[1] + id|string + '.png'}}">
+          {% endif %}
 
-        {% if id > 99 %}
-          <img class="img_content" src="{{ img[2] + id|string + '.png'}}">
-        {% endif %}
+          {% if id > 99 %}
+            <img class="img_content" src="{{ img[2] + id|string + '.png'}}">
+          {% endif %}
 
-       <center>
-          <span> {{ '#' + id|string + ' ' + pokemons[i]['name'] }} </span>
-       </center> 
-
-       <hr>
-       
-    </div>
-  <div class="classfication"> </div>
-</div>
+        <center>
+            <span> {{ '#' + id|string + ' ' + pokemons[i]['name'] }} </span>
+        </center> 
+      
+      </div>
+    <div class="classfication"> </div>
+  </div>
+</a>
 
 {% endfor %}
 
