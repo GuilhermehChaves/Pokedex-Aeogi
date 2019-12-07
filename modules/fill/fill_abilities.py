@@ -1,6 +1,5 @@
 from modules import db
 import csv
-import numpy as np
 
 def insert():
     pokedex = csv.DictReader(open("./src/Info/pokemon.csv", encoding = 'utf8'))
@@ -19,18 +18,33 @@ def insert():
         if i == 1:
           abilities.append(ability.split(", "))
   
+    diferent_abilities = []
 
-    abilities = np.asarray(abilities)
-    print(len(abilities))
-    print(len(abilities[10]))
-    abilities.reshape(-1, 3)
+    for i in range(len(abilities)):
+      length = len(abilities[i])
+      for j in range(length):
 
-
-
-    # for i in range(len(abilities)):
-    #   print(abilities[i])
+        if abilities[i][j].replace("'", "") not in diferent_abilities:
+          diferent_abilities.append(abilities[i][j].replace("'", ""))
+          print(abilities[i][j].replace("'", ""))
     
+    
+    cursor = db.cursor
+    sql = "INSERT INTO abilities (name) VALUE (%s)"
 
+    for i in range(len(diferent_abilities)):
+       value = (diferent_abilities[i])
+       cursor.execute(sql, value)
+       db.CONNECTION.commit()
+
+
+
+
+
+
+
+
+    
        
 
           
