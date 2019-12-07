@@ -30,6 +30,9 @@ as devidas configurações:
 ## Iniciando o projeto
 Para a inicialização do projeto execute no terminal o seguint comando:
 
+
 **python3 __init__.py**
+
+**OBS: O arquivo init tem 2 underlines antes e depois, que não deram para mostrar por formatação do README**
 
 O projeto começará a execução em http://localhost:5000
