@@ -39,6 +39,6 @@ O projeto começará a execução em http://localhost:5000
 
 ## Oque resta?
 
-[] Popular a tabela abilites
+[ ] Popular a tabela abilites
 
-[] Popular a tabela pokemon_ability
+[ ] Popular a tabela pokemon_ability
