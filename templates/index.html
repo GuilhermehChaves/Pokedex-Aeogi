@@ -4,7 +4,6 @@
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
 
-
 {% for i in range(800) %}
 
 <div class="card">
@@ -25,12 +24,11 @@
         {% endif %}
 
        <center>
-          <span> {{ pokemons[i]['name'] }} </span>
+          <span> {{ '#' + id|string + ' ' + pokemons[i]['name'] }} </span>
        </center> 
 
        <hr>
-
-
+       
     </div>
   <div class="classfication"> </div>
 </div>
