@@ -14,7 +14,7 @@ def selectOne(search):
   sql = "SELECT * FROM pokemon WHERE pokedex_number = %s OR name = %s"
   values = (search, search)
   cursor.execute(sql, values)
-  pokemons = cursor.fetchall()
+  pokemons = cursor.fetchone()
   db.CONNECTION.commit()
   
   return pokemons

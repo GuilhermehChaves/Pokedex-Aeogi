@@ -4,7 +4,26 @@
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
 
-{% for i in range(800) %}
+<form method="GET" action="">
+    <input type="text" placeholder="Find a pokemon..." id="search">
+    <button type="submit">Find...</button>
+</form>
+
+
+
+<script type="text/javascript">
+  $("form").submit(function(event){
+    event.preventDefault();
+
+    var search = $('#search').val();
+    var url = "http://localhost:5000/pokemon/" + search
+
+    $(window.document.location).attr('href',url);
+    alert(url);
+  });
+</script>
+
+{% for i in range(150) %}
 
 <div class="card">
     <div class="image">

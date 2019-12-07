@@ -23,7 +23,7 @@ def index():
 def pokemon(search):
 
   pokemon = Pokemon.selectOne(search)
-  title = pokemon[0]['name']
+  title = pokemon['name']
 
   return render_template('pokemon.html', title=title,
                                          pokemon=pokemon,
