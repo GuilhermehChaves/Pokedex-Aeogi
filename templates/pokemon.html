@@ -32,6 +32,38 @@
   </div>
   
 
+  <table>
+      <thead>
+        <tr>
+            <th>Pokedex number</th>
+            <th>Name</th>
+            <th>Attack</th>
+            <th>Defense</th>
+            <th>height_m</th>
+            <th>hp</th>
+            <th>speed</th>
+            <th>weight_kg</th>
+            <th>Is legendary</th>
+            <th>generation</th>
+        </tr>
+      </thead>
+
+      <tbody>
+         <tr>
+          <td> {{ pokemon['pokedex_number'] }} </td>
+          <td> {{ pokemon['name'] }} </td>
+          <td> {{ pokemon['attack'] }} </td>
+          <td> {{ pokemon['defense'] }} </td>
+          <td> {{ pokemon['height_m'] }} </td>
+          <td> {{ pokemon['hp'] }} </td>
+          <td> {{ pokemon['speed']}} </td>
+          <td> {{ pokemon['weight_kg'] }} </td>
+          <td> {{ pokemon['is_legendary'] }} </td>
+          <td> {{ pokemon['generation'] }} </td>
+        </tr>
+
+      </tbody>
+  </table>
 
 
   <script type="text/javascript">
